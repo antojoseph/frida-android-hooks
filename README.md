@@ -7,8 +7,11 @@ Setup :
 1 . Load Firda -server into your android device . 
 
 $ curl -O https://build.frida.re/frida/android/arm/bin/frida-server
+
 $ adb push frida-server /data/local/tmp/
+
 $ adb shell "chmod 755 /data/local/tmp/frida-server"
+
 $ adb shell "/data/local/tmp/frida-server &" 
 
 2 . Install frida on your machine , easy_install frida

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Frida-android-hooks : Lets you hook LoadURL Method Calls in Frida ( Android )">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Frida-android-hooks</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/antojoseph/frida-android-hooks">View on GitHub</a>
+
+          <h1 id="project_title">Frida-android-hooks</h1>
+          <h2 id="project_tagline">Lets you hook LoadURL Method Calls in Frida ( Android )</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/antojoseph/frida-android-hooks/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/antojoseph/frida-android-hooks/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a id="welcome-to-firda--hooks---android-" class="anchor" href="#welcome-to-firda--hooks---android-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to Firda- Hooks  ( Android )</h3>
+
+<p>You will find different different scripts to hook various api calls in the android platform to conduct security analysis.
+Right now , we have two scripts :</p>
+
+<ol>
+<li>WebView loadUrl() : android.webkit.WebView</li>
+<li>getDeviceId() : android.telephony.TelephonyManager</li>
+</ol>
+
+<h3>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SetUp</h3>
+
+<p>Setup :</p>
+
+<p>1 . Load Firda -server into your android device .</p>
+
+<pre><code>$ curl -O https://build.frida.re/frida/android/arm/bin/frida-server
+$ adb push frida-server /data/local/tmp/
+$ adb shell "chmod 755 /data/local/tmp/frida-server"
+$ adb shell "/data/local/tmp/frida-server &amp;" 
+</code></pre>
+
+<p>2 . Install frida on your machine .
+    easy_install frida</p>
+
+<p>3 . Change the package_name variable in the script to match the application you are instrumenting .</p>
+
+<p>4 . Run :
+    python hook_file_name_here.py</p>
+
+<p>5 . Run any app that uses the instrumented methods and check the script output .</p>
+
+<p>Have fun !</p>
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p><a href="https://github.com/antojoseph" class="user-mention">@antojoseph</a> </p>
+
+<h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Scripts ? Check out our <a href="https://frida.re">documentation</a> or contact support or Log an Issue and we’ll help you sort it out.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Frida-android-hooks maintained by <a href="https://github.com/antojoseph">antojoseph</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

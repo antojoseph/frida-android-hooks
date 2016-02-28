@@ -17,7 +17,7 @@
     <div class="wrapper">
       <header>
         <h1 class="header">Frida-android-hooks</h1>
-        <p class="header">Lets you hook LoadURL Method Calls in Frida ( Android )</p>
+        <p class="header">Instrument Everything ( Android )</p>
 
         <ul>
           <li class="download"><a class="buttons" href="https://github.com/antojoseph/frida-android-hooks/zipball/master">Download ZIP</a></li>
@@ -33,12 +33,20 @@
         <h3>
 <a id="welcome-to-firda--hooks---android-" class="anchor" href="#welcome-to-firda--hooks---android-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to Firda- Hooks  ( Android )</h3>
 
-<p>You will find different different scripts to hook various api calls in the android platform to conduct security analysis.
-Right now , we have two scripts :</p>
+<p>You will find different different modules to hook various api calls in the android platform to conduct security analysis.
+Right now , we have the following modules :</p>
 
 <ol>
-<li>WebView loadUrl() : android.webkit.WebView</li>
-<li>getDeviceId() : android.telephony.TelephonyManager</li>
+<li><p>WebView loadUrl() : android.webkit.WebView
+calls to webview is logged . </p></li>
+<li><p>getDeviceId() : android.telephony.TelephonyManager
+detects if the above api is called and can return a fake device id if needed.</p></li>
+<li><p>isDebuggerConnected() : android.os.Debug
+checks if a debugger is connected (JDB) to the app instance , can log and re-implement the method to fake it to the application which is being instrumented.</p></li>
+<li><p>.exists() : java.io.File
+checks for the presence of files in disk , can log and even hide the presence of files from applications using this api.</p></li>
+<li><p>Root Bypass Re- Implementation : root.py
+example on how a method could be re-implemented overriding the root-checks of an android application .</p></li>
 </ol>
 
 <h3>
@@ -62,7 +70,7 @@ $ adb shell "/data/local/tmp/frida-server &amp;"
 <p>4 . Run :
     python hook_file_name_here.py</p>
 
-<p>5 . Run any app that uses the instrumented methods and check the script output .</p>
+<p>5 . Run any app that uses the instrumented methods and check the module output .</p>
 
 <p>Have fun !</p>
 

@@ -13,9 +13,9 @@ def instrument_debugger_checks():
 
         hook_code = """
         setTimeout(function(){
-        Dalvik.perform(function () {
+        Java.perform(function () {
 
-            var TM = Dalvik.use("android.os.Debug");
+            var TM = Java.use("android.os.Debug");
 
             TM.isDebuggerConnected.implementation = function () {
 
@@ -24,7 +24,7 @@ def instrument_debugger_checks():
             return false;
             };
 
-            var TMS = Dalvik.use("android.telephony.TelephonyManager");
+            var TMS = Java.use("android.telephony.TelephonyManager");
             TMS.getDeviceId.implementation = function () {
                 send("Called - deviceID()");
                 return "pwn3d";

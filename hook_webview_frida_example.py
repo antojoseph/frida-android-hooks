@@ -33,7 +33,7 @@ def instrument_load_url():
         return hook_code
 
 process = frida.get_device_manager().enumerate_devices()[-1].attach(package_name)
-script = process.create_script(instrument_load_url()
+script = process.create_script(instrument_load_url())
 script.on('message',get_messages_from_js)
 script.load()
 sys.stdin.read()
